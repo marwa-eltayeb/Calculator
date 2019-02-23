@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Simple Calculator</string>
+
+    <string name="dot">0.</string>
+</resources>
