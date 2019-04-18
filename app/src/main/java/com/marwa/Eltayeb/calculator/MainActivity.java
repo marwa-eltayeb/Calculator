@@ -179,9 +179,9 @@ public class MainActivity extends AppCompatActivity {
             double testResult = result / intResult;
             ///String updatedResult = (int)firstNumber + getOperation() + (int)secondNumber;
             if (testResult != 1) {
-                displayResult.setText(getString(R.string.equals) + String.valueOf(result));
+                displayResult.setText(getString(R.string.equals) + " " +String.valueOf(result));
             } else {
-                displayResult.setText(getString(R.string.equals) + String.valueOf(intResult));
+                displayResult.setText(getString(R.string.equals) + " " + String.valueOf(intResult));
             }
             ///showOperation.setText(updatedResult);
             ///showAll();
@@ -192,6 +192,32 @@ public class MainActivity extends AppCompatActivity {
         ///Toast.makeText(this, result +"", Toast.LENGTH_SHORT).show();
     }
 
+
+    /*
+    * Show Numbers on Screen
+    */
+    /*
+    private void showAll() {
+        String all = getFirstNumber() + getOperation() + getSecondNumber();
+        showOperation.setText(all);
+    }
+
+    private String getFirstNumber() {
+        return String.valueOf((int)firstNumber);
+    }
+
+    private String getOperation() {
+        return mOperation + "";
+    }
+
+    private String getSecondNumber() {
+        return String.valueOf((int)secondNumber);
+    }
+
+    private void setNumber(String number) {
+        showOperation.setText(number);
+    }
+    */
 
 
 }
