@@ -1,4 +1,4 @@
-package com.example.marwa.simplecalculator;
+package com.marwa.Eltayeb.calculator;
 
 import org.junit.Test;
 

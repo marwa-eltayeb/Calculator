@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#605f5f"
     android:orientation="vertical"
-    tools:context="com.example.marwa.simplecalculator.MainActivity">
+    tools:context="com.marwa.Eltayeb.calculator.MainActivity">
 
 
     <LinearLayout

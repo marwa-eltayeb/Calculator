@@ -1,4 +1,4 @@
-package com.example.marwa.simplecalculator;
+package com.marwa.Eltayeb.calculator;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.marwa.simplecalculator", appContext.getPackageName());
+        assertEquals("com.marwa.Eltayeb.calculator", appContext.getPackageName());
     }
 }
