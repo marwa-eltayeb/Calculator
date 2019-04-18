@@ -9,7 +9,7 @@
 
 
     <LinearLayout
-        android:id="@+id/text_layout"
+        android:id="@+id/linearLayoutOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -28,7 +28,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/display_result"
+            android:id="@+id/displayResult"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textColor="#000"
@@ -37,7 +37,7 @@
 
 
     <LinearLayout
-        android:id="@+id/text_layout2"
+        android:id="@+id/linearLayoutTwo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
