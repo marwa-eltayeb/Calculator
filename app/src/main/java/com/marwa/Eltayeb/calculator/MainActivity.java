@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         showOperation = (EditText) findViewById(R.id.showOperation);
         showOperation.requestFocus();
 
-        displayResult = (TextView) findViewById(R.id.display_result);
+        displayResult = (TextView) findViewById(R.id.displayResult);
 
     }
 
