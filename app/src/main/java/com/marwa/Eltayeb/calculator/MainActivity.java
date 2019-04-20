@@ -16,39 +16,37 @@ public class MainActivity extends AppCompatActivity {
     Double result;
     char mOperation;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_main);
 
-
         showOperation = (EditText) findViewById(R.id.showOperation);
         showOperation.requestFocus();
-
         displayResult = (TextView) findViewById(R.id.displayResult);
 
     }
 
-
     /**
      * Sets different numbers
+     *
      * @param number is the number that the user choose.
      */
-    private void setAll(String number){
+    private void setAll(String number) {
         String all = showOperation.getText() + number;
         showOperation.setText(all);
     }
 
     /**
      * Sets different operations
+     *
      * @param operation is the operation that the user choose.
      */
     private void setOperation(char operation) {
         if (showOperation.getText().toString().isEmpty()) {
             showOperation.setText("");
-        }else {
+        } else {
             // Get the first Number and parse it into double
             firstNumber = Double.parseDouble(String.valueOf(showOperation.getText()));
             // Store specified operation into mOperation
@@ -56,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             mOperation = operation;
         }
     }
-
 
     /*
     * Clear the result
@@ -98,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
         setAll("0");
     }
 
-
     public void one(View view) {
         setAll("1");
     }
@@ -110,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
     public void three(View view) {
         setAll("3");
     }
-
 
     public void four(View view) {
         setAll("4");
@@ -128,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
         setAll("7");
     }
 
-
     public void eight(View view) {
         setAll("8");
     }
@@ -136,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
     public void nine(View view) {
         setAll("9");
     }
-
 
     public void dot(View view) {
         setAll(".");
@@ -151,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
             showOperation.setText(String.valueOf(num));
         }
     }
-
 
     public void equals(View view) {
         try {
@@ -186,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
             double testResult = result / intResult;
             ///String updatedResult = (int)firstNumber + getOperation() + (int)secondNumber;
             if (testResult != 1) {
-                displayResult.setText(getString(R.string.equals) + " " +String.valueOf(result));
+                displayResult.setText(getString(R.string.equals) + " " + String.valueOf(result));
             } else {
                 displayResult.setText(getString(R.string.equals) + " " + String.valueOf(intResult));
             }
@@ -225,6 +217,5 @@ public class MainActivity extends AppCompatActivity {
         showOperation.setText(number);
     }
     */
-
-
+    
 }
