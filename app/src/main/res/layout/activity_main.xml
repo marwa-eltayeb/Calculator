@@ -24,14 +24,14 @@
             android:maxLength="10"
             android:maxLines="1"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSizeForScreen" />
 
         <TextView
             android:id="@+id/displayResult"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSizeForScreen" />
     </LinearLayout>
 
 
@@ -53,7 +53,7 @@
             android:onClick="clear"
             android:text="@string/c"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnDiv"
@@ -67,7 +67,7 @@
             android:onClick="divide"
             android:text="@string/divide"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnMul"
@@ -81,7 +81,7 @@
             android:onClick="multiply"
             android:text="@string/x"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnBS"
@@ -96,7 +96,7 @@
             android:text="@string/bs"
             android:textAllCaps="false"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -117,7 +117,7 @@
             android:onClick="seven"
             android:text="@string/_7"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btn8"
@@ -131,7 +131,7 @@
             android:onClick="eight"
             android:text="@string/_8"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btn9"
@@ -145,7 +145,7 @@
             android:onClick="nine"
             android:text="@string/_9"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnSub"
@@ -159,7 +159,7 @@
             android:onClick="subtract"
             android:text="@string/sub"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -180,7 +180,7 @@
             android:onClick="four"
             android:text="@string/_4"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btn5"
@@ -194,7 +194,7 @@
             android:onClick="five"
             android:text="@string/_5"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btn6"
@@ -208,7 +208,7 @@
             android:onClick="six"
             android:text="@string/_6"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnAdd"
@@ -222,7 +222,7 @@
             android:onClick="add"
             android:text="@string/plus"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -243,7 +243,7 @@
             android:onClick="one"
             android:text="@string/_1"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btn2"
@@ -257,7 +257,7 @@
             android:onClick="two"
             android:text="@string/_2"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btn3"
@@ -271,7 +271,7 @@
             android:onClick="three"
             android:text="@string/_3"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnPerc"
@@ -285,7 +285,7 @@
             android:onClick="percent"
             android:text="@string/remaining"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -307,7 +307,7 @@
             android:onClick="zero"
             android:text="@string/_0"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnDot"
@@ -321,7 +321,7 @@
             android:onClick="dot"
             android:text="@string/point"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnNegative"
@@ -335,7 +335,7 @@
             android:onClick="positiveAndNegative"
             android:text="@string/pos_neg"
             android:textColor="#000"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
 
         <Button
             android:id="@+id/btnEquals"
@@ -349,7 +349,7 @@
             android:onClick="equals"
             android:text="@string/equals"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="@dimen/testSize" />
     </LinearLayout>
 </LinearLayout>
 
