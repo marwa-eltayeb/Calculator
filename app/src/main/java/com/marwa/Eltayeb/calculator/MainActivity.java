@@ -32,12 +32,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * Sets different numbers
+     * @param number is the number that the user choose.
+     */
     private void setAll(String number){
         String all = showOperation.getText() + number;
         showOperation.setText(all);
     }
 
+    /**
+     * Sets different operations
+     * @param operation is the operation that the user choose.
+     */
     private void setOperation(char operation) {
         if (showOperation.getText().toString().isEmpty()) {
             showOperation.setText("");
