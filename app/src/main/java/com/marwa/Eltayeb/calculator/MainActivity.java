@@ -217,5 +217,5 @@ public class MainActivity extends AppCompatActivity {
         showOperation.setText(number);
     }
     */
-    
+
 }
