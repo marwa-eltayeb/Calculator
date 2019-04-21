@@ -25,11 +25,6 @@ public class MainActivity extends AppCompatActivity {
         showOperation.requestFocus();
         displayResult = (TextView) findViewById(R.id.displayResult);
 
-        /*
-        String text = showOperation.getText().toString() + "<font color='#FF0000'>" + mOperation +"</font>";
-        showOperation.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
-        */
-
     }
 
     /**
@@ -162,9 +157,8 @@ public class MainActivity extends AppCompatActivity {
             // Split it
             String[] splittedText = text.split(String.valueOf("\\" + mOperation));
             // Take the Second number
-            secondNumber = Integer.parseInt(splittedText[1]);
+            secondNumber = Double.parseDouble(splittedText[1]);
 
-            Toast.makeText(this, secondNumber + "", Toast.LENGTH_SHORT).show();
             switch (mOperation) {
                 case '+':
                     result = firstNumber + secondNumber;
