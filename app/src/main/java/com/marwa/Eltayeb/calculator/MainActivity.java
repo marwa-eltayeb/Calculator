@@ -46,13 +46,24 @@ public class MainActivity extends AppCompatActivity {
         if (showOperation.getText().toString().isEmpty()) {
             showOperation.setText("");
         } else {
-            // Get the first Number and parse it into double
-            firstNumber = Double.parseDouble(String.valueOf(showOperation.getText()));
-            // Store specified operation into mOperation
-            mOperation = operation;
-            // Show mathematical operation on screen
-            String text = showOperation.getText().toString() + operation;
-            showOperation.setText(text);
+            try {
+                // Get the first Number and parse it into double
+                firstNumber = Double.parseDouble(String.valueOf(showOperation.getText()));
+                // Store specified operation into mOperation
+                mOperation = operation;
+                // Show mathematical operation on screen
+                String text = showOperation.getText().toString() + operation;
+                showOperation.setText(text);
+
+                /*
+                if(operation == '/'){
+                   text = showOperation.getText().toString().replace(operation,'÷');
+                   showOperation.setText(text);
+                }
+               */
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -185,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
 
             Integer intResult = result.intValue();
             double testResult = result / intResult;
-            
+
             if (testResult != 1) {
                 displayResult.setText(getString(R.string.equals) + " " + String.valueOf(result));
             } else {
