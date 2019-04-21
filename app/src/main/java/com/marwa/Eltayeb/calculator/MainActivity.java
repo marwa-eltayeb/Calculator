@@ -25,6 +25,11 @@ public class MainActivity extends AppCompatActivity {
         showOperation.requestFocus();
         displayResult = (TextView) findViewById(R.id.displayResult);
 
+        /*
+        String text = showOperation.getText().toString() + "<font color='#FF0000'>" + mOperation +"</font>";
+        showOperation.setText(Html.fromHtml(text), TextView.BufferType.SPANNABLE);
+        */
+
     }
 
     /**
@@ -33,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
      * @param number is the number that the user choose.
      */
     private void setAll(String number) {
-        String all = showOperation.getText() + number;
+        String all = String.valueOf(showOperation.getText() + number);
         showOperation.setText(all);
     }
 
@@ -54,13 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 // Show mathematical operation on screen
                 String text = showOperation.getText().toString() + operation;
                 showOperation.setText(text);
-
-                /*
-                if(operation == '/'){
-                   text = showOperation.getText().toString().replace(operation,'÷');
-                   showOperation.setText(text);
-                }
-               */
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -88,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void divide(View view) {
-        setOperation('/');
+        setOperation('÷');
     }
 
     public void percent(View view) {
@@ -158,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void equals(View view) {
-
         try {
             // Get the Text
             String text = showOperation.getText().toString();
@@ -178,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 case '*':
                     result = firstNumber * secondNumber;
                     break;
-                case '/':
+                case '÷':
                     if (secondNumber == 0) //when denominator becomes zero
                     {
                         Toast.makeText(this, "DIVISION NOT POSSIBLE", Toast.LENGTH_SHORT).show();
