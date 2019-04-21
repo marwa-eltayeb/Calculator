@@ -50,8 +50,10 @@ public class MainActivity extends AppCompatActivity {
             // Get the first Number and parse it into double
             firstNumber = Double.parseDouble(String.valueOf(showOperation.getText()));
             // Store specified operation into mOperation
-            showOperation.setText(null);
             mOperation = operation;
+            // Show mathematical operation on screen
+            String text = showOperation.getText().toString() + operation;
+            showOperation.setText(text);
         }
     }
 
@@ -146,8 +148,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void equals(View view) {
+
         try {
-            secondNumber = Double.parseDouble(String.valueOf(showOperation.getText()));
+            // Get the Text
+            String text = showOperation.getText().toString();
+            // Split it
+            String[] splittedText = text.split(String.valueOf("\\" + mOperation));
+            // Take the Second number
+            secondNumber = Integer.parseInt(splittedText[1]);
+
+            Toast.makeText(this, secondNumber + "", Toast.LENGTH_SHORT).show();
             switch (mOperation) {
                 case '+':
                     result = firstNumber + secondNumber;
