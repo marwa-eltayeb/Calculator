@@ -332,7 +332,7 @@
             android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="@drawable/button3"
-            android:onClick="positiveAndNegative"
+            android:onClick="setNegativeNumber"
             android:text="@string/pos_neg"
             android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
