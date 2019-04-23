@@ -1,11 +1,11 @@
 package com.marwa.Eltayeb.calculator;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     double secondNumber = 0;
     Double result;
     char mOperation;
-    Spannable coloredText;
+    Spannable coloredOperation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 String text = showOperation.getText().toString() + operation;
                 //showOperation.setText(text);
 
-                int blue = getResources().getColor(R.color.blue);
-                coloredText = getColoredString(String.valueOf(operation),blue);
-                showOperation.setText(coloredText);
+                int blue = ContextCompat.getColor(this, R.color.blue);
+                coloredOperation = getColoredString(String.valueOf(operation),blue);
+                showOperation.setText(coloredOperation);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     private Spannable getColoredString(String text, int colorId) {
         Spannable spannable = new SpannableString(text);
         spannable.setSpan(new ForegroundColorSpan(colorId), 0, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        Log.d("tag",spannable.toString());
+        Toast.makeText(this, spannable + "", Toast.LENGTH_SHORT).show();
         return spannable;
     }
 
@@ -111,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
         setOperation('%');
     }
 
+    /**
+     * Undo the last number.
+     */
     public void backSpace(View view) {
         String txt = showOperation.getText().toString();
         if (txt.length() > 0) {
@@ -163,7 +166,10 @@ public class MainActivity extends AppCompatActivity {
         setAll(".");
     }
 
-    public void positiveAndNegative(View view) {
+    /**
+     * Set a negative number.
+     */
+    public void setNegativeNumber(View view) {
         if (showOperation.getText().toString().isEmpty()) {
             showOperation.setText("");
         } else {
@@ -212,9 +218,9 @@ public class MainActivity extends AppCompatActivity {
             double testResult = result / intResult;
 
             if (testResult != 1) {
-                displayResult.setText(getString(R.string.equals) + " " + String.valueOf(result));
+                displayResult.setText(getString(R.string.equals) + "" + String.valueOf(result));
             } else {
-                displayResult.setText(getString(R.string.equals) + " " + String.valueOf(intResult));
+                displayResult.setText(getString(R.string.equals) + "" + String.valueOf(intResult));
             }
 
         } catch (Exception e) {
