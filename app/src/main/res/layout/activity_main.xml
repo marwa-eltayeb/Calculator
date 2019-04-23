@@ -23,14 +23,14 @@
             android:inputType="number"
             android:maxLength="10"
             android:maxLines="1"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSizeForScreen" />
 
         <TextView
             android:id="@+id/displayResult"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSizeForScreen" />
     </LinearLayout>
 
@@ -52,7 +52,7 @@
             android:background="@drawable/button1"
             android:onClick="clear"
             android:text="@string/c"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -66,7 +66,7 @@
             android:background="@drawable/button2"
             android:onClick="divide"
             android:text="@string/divide"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -80,7 +80,7 @@
             android:background="@drawable/button2"
             android:onClick="multiply"
             android:text="@string/x"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -95,7 +95,7 @@
             android:onClick="backSpace"
             android:text="@string/bs"
             android:textAllCaps="false"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
     </LinearLayout>
 
@@ -144,7 +144,7 @@
             android:background="@drawable/button3"
             android:onClick="nine"
             android:text="@string/_9"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -158,7 +158,7 @@
             android:background="@drawable/button2"
             android:onClick="subtract"
             android:text="@string/sub"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
     </LinearLayout>
 
@@ -179,7 +179,7 @@
             android:background="@drawable/button3"
             android:onClick="four"
             android:text="@string/_4"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -193,7 +193,7 @@
             android:background="@drawable/button3"
             android:onClick="five"
             android:text="@string/_5"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -207,7 +207,7 @@
             android:background="@drawable/button3"
             android:onClick="six"
             android:text="@string/_6"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -221,7 +221,7 @@
             android:background="@drawable/button2"
             android:onClick="add"
             android:text="@string/plus"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
     </LinearLayout>
 
@@ -242,7 +242,7 @@
             android:background="@drawable/button3"
             android:onClick="one"
             android:text="@string/_1"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -256,7 +256,7 @@
             android:background="@drawable/button3"
             android:onClick="two"
             android:text="@string/_2"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -270,7 +270,7 @@
             android:background="@drawable/button3"
             android:onClick="three"
             android:text="@string/_3"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -284,7 +284,7 @@
             android:background="@drawable/button2"
             android:onClick="percent"
             android:text="@string/remaining"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
     </LinearLayout>
 
@@ -306,7 +306,7 @@
             android:background="@drawable/button3"
             android:onClick="zero"
             android:text="@string/_0"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -320,7 +320,7 @@
             android:background="@drawable/button3"
             android:onClick="dot"
             android:text="@string/point"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -334,7 +334,7 @@
             android:background="@drawable/button3"
             android:onClick="positiveAndNegative"
             android:text="@string/pos_neg"
-            android:textColor="#000"
+            android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
 
         <Button
@@ -348,7 +348,7 @@
             android:background="@drawable/button1"
             android:onClick="equals"
             android:text="@string/equals"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
     </LinearLayout>
 </LinearLayout>
