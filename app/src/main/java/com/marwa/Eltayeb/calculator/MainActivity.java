@@ -2,6 +2,10 @@ package com.marwa.Eltayeb.calculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -15,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     double secondNumber = 0;
     Double result;
     char mOperation;
+    Spannable coloredText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +58,29 @@ public class MainActivity extends AppCompatActivity {
                 mOperation = operation;
                 // Show mathematical operation on screen
                 String text = showOperation.getText().toString() + operation;
-                showOperation.setText(text);
+                //showOperation.setText(text);
+
+                int blue = getResources().getColor(R.color.blue);
+                coloredText = getColoredString(String.valueOf(operation),blue);
+                showOperation.setText(coloredText);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    /***
+     *
+     * @param text this will setup to your textView
+     * @param colorId  text will fill with this color.
+     * @return string with color, it will append to textView.
+     */
+    private Spannable getColoredString(String text, int colorId) {
+        Spannable spannable = new SpannableString(text);
+        spannable.setSpan(new ForegroundColorSpan(colorId), 0, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Log.d("tag",spannable.toString());
+        return spannable;
     }
 
     /*
