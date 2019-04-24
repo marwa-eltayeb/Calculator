@@ -1,10 +1,10 @@
 package com.marwa.Eltayeb.calculator;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.EditText;
@@ -58,11 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 mOperation = operation;
                 // Show mathematical operation on screen
                 String text = showOperation.getText().toString() + operation;
-                //showOperation.setText(text);
+                showOperation.setText(text);
 
+                /*
                 int blue = ContextCompat.getColor(this, R.color.blue);
-                coloredOperation = getColoredString(String.valueOf(operation),blue);
+                coloredOperation = getColoredString(String.valueOf(operation), blue);
                 showOperation.setText(coloredOperation);
+                */
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -123,56 +125,79 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void zero(View view) {
+        deletePreviousResult();
         setAll("0");
     }
 
     public void one(View view) {
+        deletePreviousResult();
         setAll("1");
     }
 
     public void two(View view) {
+        deletePreviousResult();
         setAll("2");
     }
 
     public void three(View view) {
+        deletePreviousResult();
         setAll("3");
     }
 
     public void four(View view) {
+        deletePreviousResult();
         setAll("4");
     }
 
     public void five(View view) {
+        deletePreviousResult();
         setAll("5");
     }
 
     public void six(View view) {
+        deletePreviousResult();
         setAll("6");
     }
 
     public void seven(View view) {
+        deletePreviousResult();
         setAll("7");
     }
 
     public void eight(View view) {
+        deletePreviousResult();
         setAll("8");
     }
 
     public void nine(View view) {
+        deletePreviousResult();
         setAll("9");
     }
 
     public void dot(View view) {
+        deletePreviousResult();
         setAll(".");
+    }
+
+    /**
+     * Delete any previous results
+     */
+    private void deletePreviousResult() {
+        if (!TextUtils.isEmpty(displayResult.getText().toString())) {
+            showOperation.setText("");
+            displayResult.setText("");
+        }
     }
 
     /**
      * Set a negative number.
      */
     public void setNegativeNumber(View view) {
+        deletePreviousResult();
         if (showOperation.getText().toString().isEmpty()) {
             showOperation.setText("");
         } else {
+            deletePreviousResult();
             int num = Integer.parseInt(String.valueOf(showOperation.getText()));
             num = num * (-1);
             showOperation.setText(String.valueOf(num));
