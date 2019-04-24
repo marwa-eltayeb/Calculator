@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
      * @param operation is the operation that the user choose.
      */
     private void setOperation(char operation) {
+        String text;
         if (showOperation.getText().toString().isEmpty()) {
             showOperation.setText("");
         } else {
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 // Store specified operation into mOperation
                 mOperation = operation;
                 // Show mathematical operation on screen
-                String text = showOperation.getText().toString() + operation;
+                text = showOperation.getText().toString() + operation;
                 showOperation.setText(text);
 
                 /*
@@ -193,14 +194,16 @@ public class MainActivity extends AppCompatActivity {
      * Set a negative number.
      */
     public void setNegativeNumber(View view) {
-        deletePreviousResult();
         if (showOperation.getText().toString().isEmpty()) {
             showOperation.setText("");
         } else {
-            deletePreviousResult();
-            int num = Integer.parseInt(String.valueOf(showOperation.getText()));
-            num = num * (-1);
-            showOperation.setText(String.valueOf(num));
+            try {
+                int num = Integer.parseInt(String.valueOf(showOperation.getText()));
+                num = num * (-1);
+                showOperation.setText(String.valueOf(num));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
