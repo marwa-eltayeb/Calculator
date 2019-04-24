@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             // Get teh result
             String result = displayResult.getText().toString();
             // Remove Equal sign
-            String textWithoutEqual = result.replace("=","");
+            String textWithoutEqual = result.replace("=", "");
             // Store the result as the first number
             firstNumber = Double.parseDouble(String.valueOf(textWithoutEqual));
             // Clear the result screen
@@ -87,19 +87,6 @@ public class MainActivity extends AppCompatActivity {
             // Show the first number and the operation sign on screen
             showOperation.setText(firstNumber + "" + String.valueOf(operation));
         }
-    }
-
-    /***
-     *
-     * @param text this will setup to your textView
-     * @param colorId  text will fill with this color.
-     * @return string with color, it will append to textView.
-     */
-    private Spannable getColoredString(String text, int colorId) {
-        Spannable spannable = new SpannableString(text);
-        spannable.setSpan(new ForegroundColorSpan(colorId), 0, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        Toast.makeText(this, spannable + "", Toast.LENGTH_SHORT).show();
-        return spannable;
     }
 
     /*
@@ -274,7 +261,19 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    /***
+     *
+     * @param text this will setup to your textView
+     * @param colorId  text will fill with this color.
+     * @return string with color, it will append to textView.
+     */
+    private Spannable getColoredString(String text, int colorId) {
+        Spannable spannable = new SpannableString(text);
+        spannable.setSpan(new ForegroundColorSpan(colorId), 0, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        Toast.makeText(this, spannable + "", Toast.LENGTH_SHORT).show();
+        return spannable;
     }
 
 }
