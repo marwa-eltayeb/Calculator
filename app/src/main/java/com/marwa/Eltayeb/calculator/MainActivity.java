@@ -258,13 +258,17 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
 
-            Integer intResult = result.intValue();
-            double testResult = result / intResult;
-
-            if (testResult != 1) {
+            // Get the whole number of the result
+            Integer wholeNumber = result.intValue();
+            // Check if result is whole number or not
+            double checkResult = result / wholeNumber;
+            // If result is not equal one
+            if (checkResult != 1) {
+                // Set the decimal number
                 displayResult.setText(getString(R.string.equals) + "" + String.valueOf(result));
             } else {
-                displayResult.setText(getString(R.string.equals) + "" + String.valueOf(intResult));
+                // Set the whole number
+                displayResult.setText(getString(R.string.equals) + "" + String.valueOf(wholeNumber));
             }
 
         } catch (Exception e) {
