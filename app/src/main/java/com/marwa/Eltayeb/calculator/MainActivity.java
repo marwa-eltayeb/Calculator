@@ -71,6 +71,22 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
+        // Do another operation
+        if (!TextUtils.isEmpty(displayResult.getText().toString())) {
+            // Get teh result
+            String result = displayResult.getText().toString();
+            // Remove Equal sign
+            String textWithoutEqual = result.replace("=","");
+            // Store the result as the first number
+            firstNumber = Double.parseDouble(String.valueOf(textWithoutEqual));
+            // Clear the result screen
+            displayResult.setText("");
+            // Store another operation sign
+            mOperation = operation;
+            // Show the first number and the operation sign on screen
+            showOperation.setText(firstNumber + "" + String.valueOf(operation));
+        }
     }
 
     /***
