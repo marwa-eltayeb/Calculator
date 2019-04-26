@@ -10,13 +10,12 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText showOperation;
+    TextView showOperation;
     TextView displayResult;
     double firstNumber = 0;
     double secondNumber = 0;
@@ -29,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        showOperation = (EditText) findViewById(R.id.showOperation);
-        showOperation.requestFocus();
+        showOperation =(TextView)findViewById(R.id.showOperation);
+        showOperation.setCursorVisible(false);
         displayResult = (TextView) findViewById(R.id.displayResult);
 
     }
@@ -288,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 24) {
             return (Html.fromHtml(number, 1)); // for 24 api and more
         } else {
-            return Html.fromHtml(number);// or for older api
+            return Html.fromHtml(number,2);// or for older api
         }
     }
 
