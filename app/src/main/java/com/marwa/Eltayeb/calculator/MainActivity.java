@@ -2,6 +2,7 @@ package com.marwa.Eltayeb.calculator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     double secondNumber = 0;
     Double result;
     char mOperation;
-    Spannable coloredOperation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -260,13 +261,17 @@ public class MainActivity extends AppCompatActivity {
             Integer wholeNumber = result.intValue();
             // Check if result is whole number or not
             double checkResult = result / wholeNumber;
+
+            String coloredDecimalNumber =  "<font color='#5d72e9'>" + getString(R.string.equals) + "" + result +"</font>";
+            String coloredWholeNumber =  "<font color='#5d72e9'>" + getString(R.string.equals) + "" + wholeNumber +"</font>";
+
             // If result is not equal one
             if (checkResult != 1) {
                 // Set the decimal number
-                displayResult.setText(getString(R.string.equals) + "" + String.valueOf(result));
+                displayResult.setText(Html.fromHtml(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
             } else {
-                // Set the whole number
-                displayResult.setText(getString(R.string.equals) + "" + String.valueOf(wholeNumber));
+                // Set the decimal number
+                displayResult.setText(Html.fromHtml(coloredWholeNumber), TextView.BufferType.SPANNABLE);
             }
 
         } catch (Exception e) {
