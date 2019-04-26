@@ -16,13 +16,12 @@
         android:background="@drawable/rounded_corner"
         android:orientation="vertical">
 
-        <EditText
+        <TextView
             android:id="@+id/showOperation"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:background="@null"
-            android:inputType="number"
-            android:enabled="false"
+            android:gravity="center_vertical"
             android:maxLength="15"
             android:maxLines="1"
             android:textColor="@color/black"
