@@ -1,10 +1,12 @@
 package com.marwa.Eltayeb.calculator;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
@@ -268,14 +270,25 @@ public class MainActivity extends AppCompatActivity {
             // If result is not equal one
             if (checkResult != 1) {
                 // Set the decimal number
-                displayResult.setText(Html.fromHtml(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
+                displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
             } else {
                 // Set the decimal number
-                displayResult.setText(Html.fromHtml(coloredWholeNumber), TextView.BufferType.SPANNABLE);
+                displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Color the final result
+     */
+    private Spanned colorResult(String number){
+        if (Build.VERSION.SDK_INT >= 24) {
+            return (Html.fromHtml(number, 1)); // for 24 api and more
+        } else {
+            return Html.fromHtml(number);// or for older api
         }
     }
 
