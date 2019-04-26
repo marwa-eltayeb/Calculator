@@ -13,25 +13,26 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
-    TextView showOperation;
-    TextView displayResult;
+    //TextView showOperation;
+    @BindView(R.id.showOperation) TextView showOperation;
+    @BindView(R.id. displayResult) TextView  displayResult;
     double firstNumber = 0;
     double secondNumber = 0;
     Double result;
     char mOperation;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        showOperation =(TextView)findViewById(R.id.showOperation);
+        ButterKnife.bind(this);
         showOperation.setCursorVisible(false);
-        displayResult = (TextView) findViewById(R.id.displayResult);
-
     }
 
     /**
