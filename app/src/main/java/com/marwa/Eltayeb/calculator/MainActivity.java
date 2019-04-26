@@ -77,15 +77,26 @@ public class MainActivity extends AppCompatActivity {
             // Get teh result
             String result = displayResult.getText().toString();
             // Remove Equal sign
-            String textWithoutEqual = result.replace("=", "");
+            Double textWithoutEqual = Double.parseDouble(result.replace("=", ""));
             // Store the result as the first number
             firstNumber = Double.parseDouble(String.valueOf(textWithoutEqual));
             // Clear the result screen
             displayResult.setText("");
             // Store another operation sign
             mOperation = operation;
-            // Show the first number and the operation sign on screen
-            showOperation.setText(firstNumber + "" + String.valueOf(operation));
+
+            // Get the whole number of the result
+            Integer wholeNumber = textWithoutEqual.intValue();
+            // Check if result is whole number or not
+            double checkResult = textWithoutEqual / wholeNumber;
+            // If result is not equal one
+            if (checkResult != 1) {
+                // Show the first number and the operation sign on screen
+                showOperation.setText(firstNumber + "" + String.valueOf(operation));
+            } else {
+                // Show the first number and the operation sign on screen
+                showOperation.setText(wholeNumber + "" + String.valueOf(operation));
+            }
         }
     }
 
