@@ -9,7 +9,9 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +20,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    //TextView showOperation;
-    @BindView(R.id.showOperation) TextView showOperation;
+
+    @BindView(R.id.showOperation) EditText showOperation;
     @BindView(R.id. displayResult) TextView  displayResult;
     double firstNumber = 0;
     double secondNumber = 0;
@@ -32,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-        showOperation.setCursorVisible(false);
+        showOperation.setOnTouchListener(onTouchListener);
+
     }
 
     /**
@@ -198,16 +201,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Delete any previous results
-     */
-    private void deletePreviousResult() {
-        if (!TextUtils.isEmpty(displayResult.getText().toString())) {
-            showOperation.setText("");
-            displayResult.setText("");
-        }
-    }
-
-    /**
      * Set a negative number.
      */
     public void setNegativeNumber(View view) {
@@ -304,5 +297,28 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, spannable + "", Toast.LENGTH_SHORT).show();
         return spannable;
     }
+
+    /**
+     * Delete any previous results
+     */
+    private void deletePreviousResult() {
+        if (!TextUtils.isEmpty(displayResult.getText().toString())) {
+            showOperation.setText("");
+            displayResult.setText("");
+        }
+    }
+
+    private View.OnTouchListener onTouchListener = new View.OnTouchListener(){
+        @Override
+        public boolean onTouch(View view, MotionEvent event) {
+            int action = event.getAction();
+            if(action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_POINTER_DOWN){
+                view.setFocusable(false);
+            }else {
+                view.setFocusableInTouchMode(true);
+            }
+            return true;
+        }
+    };
 
 }
