@@ -11,8 +11,8 @@
         android:id="@+id/linearLayoutOne"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
         android:layout_margin="10dp"
+        android:layout_weight="3"
         android:background="@drawable/rounded_corner"
         android:orientation="vertical">
 
@@ -86,7 +86,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btnBS"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
@@ -95,7 +95,9 @@
             android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="@drawable/button2"
+            android:contentDescription="@string/back_space"
             android:onClick="backSpace"
+            android:src="@drawable/ic_arrow_back_black_24dp"
             android:text="@string/bs"
             android:textAllCaps="false"
             android:textColor="@color/white"
