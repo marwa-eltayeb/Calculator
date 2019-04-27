@@ -22,6 +22,7 @@
             android:layout_height="75dp"
             android:background="@null"
             android:gravity="center_vertical"
+            android:inputType="none"
             android:maxLength="15"
             android:maxLines="1"
             android:textColor="@color/black"
