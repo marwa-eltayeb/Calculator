@@ -21,8 +21,10 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.showOperation) EditText showOperation;
-    @BindView(R.id. displayResult) TextView  displayResult;
+    @BindView(R.id.showOperation)
+    EditText showOperation;
+    @BindView(R.id.displayResult)
+    TextView displayResult;
     double firstNumber = 0;
     double secondNumber = 0;
     Double result;
@@ -95,8 +97,11 @@ public class MainActivity extends AppCompatActivity {
             Integer wholeNumber = textWithoutEqual.intValue();
             // Check if result is whole number or not
             double checkResult = textWithoutEqual / wholeNumber;
-            // If result is not equal one
-            if (checkResult != 1) {
+
+            if (firstNumber == 0.0) {
+                showOperation.setText(0 + "" + String.valueOf(operation));
+                // If result is not equal one
+            } else if (checkResult != 1) {
                 // Show the first number and the operation sign on screen
                 showOperation.setText(firstNumber + "" + String.valueOf(operation));
             } else {
@@ -257,18 +262,20 @@ public class MainActivity extends AppCompatActivity {
             // Check if result is whole number or not
             double checkResult = result / wholeNumber;
 
-            String coloredDecimalNumber =  "<font color='#5d72e9'>" + getString(R.string.equals) + "" + result +"</font>";
-            String coloredWholeNumber =  "<font color='#5d72e9'>" + getString(R.string.equals) + "" + wholeNumber +"</font>";
+            String coloredDecimalNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + result + "</font>";
+            String coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + wholeNumber + "</font>";
 
-            // If result is not equal one
-            if (checkResult != 1) {
+            if (result == 0.0) {
+                coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + 0 + "</font>";
+                displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
+                // If result is not equal one
+            } else if (checkResult != 1) {
                 // Set the decimal number
                 displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
             } else {
-                // Set the decimal number
+                // Set the whole number
                 displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -277,11 +284,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Color the final result
      */
-    private Spanned colorResult(String number){
+    private Spanned colorResult(String number) {
         if (Build.VERSION.SDK_INT >= 24) {
             return (Html.fromHtml(number, 1)); // for 24 api and more
         } else {
-            return Html.fromHtml(number,2);// or for older api
+            return Html.fromHtml(number, 2);// or for older api
         }
     }
 
@@ -308,13 +315,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private View.OnTouchListener onTouchListener = new View.OnTouchListener(){
+    private View.OnTouchListener onTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent event) {
             int action = event.getAction();
-            if(action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_POINTER_DOWN){
+            if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_POINTER_DOWN) {
                 view.setFocusable(false);
-            }else {
+            } else {
                 view.setFocusableInTouchMode(true);
             }
             return true;
