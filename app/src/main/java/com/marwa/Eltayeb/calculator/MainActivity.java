@@ -21,10 +21,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.showOperation)
-    EditText showOperation;
-    @BindView(R.id.displayResult)
-    TextView displayResult;
+    @BindView(R.id.showOperation) EditText showOperation;
+    @BindView(R.id.displayResult) TextView displayResult;
     double firstNumber = 0;
     double secondNumber = 0;
     Double result;
