@@ -4,11 +4,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -126,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void multiply(View view) {
-        setOperation('*');
+        setOperation('x');
     }
 
     public void divide(View view) {
@@ -198,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
         setAll("9");
     }
 
-    public void dot(View view) {
+    public void point(View view) {
         deletePreviousResult();
         setAll(".");
     }
@@ -236,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
                 case '-':
                     result = firstNumber - secondNumber;
                     break;
-                case '*':
+                case 'x':
                     result = firstNumber * secondNumber;
                     break;
                 case '÷':
@@ -288,19 +285,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             return Html.fromHtml(number, 2);// or for older api
         }
-    }
-
-    /***
-     *
-     * @param text this will setup to your textView
-     * @param colorId  text will fill with this color.
-     * @return string with color, it will append to textView.
-     */
-    private Spannable getColoredString(String text, int colorId) {
-        Spannable spannable = new SpannableString(text);
-        spannable.setSpan(new ForegroundColorSpan(colorId), 0, spannable.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        Toast.makeText(this, spannable + "", Toast.LENGTH_SHORT).show();
-        return spannable;
     }
 
     /**
