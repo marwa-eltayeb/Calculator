@@ -18,8 +18,10 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.showOperation) EditText showOperation;
-    @BindView(R.id.displayResult) TextView displayResult;
+    @BindView(R.id.showOperation)
+    EditText showOperation;
+    @BindView(R.id.displayResult)
+    TextView displayResult;
     double firstNumber = 0;
     double secondNumber = 0;
     Double result;
@@ -219,10 +221,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void equals(View view) {
         try {
-            // Get the Text
-            String text = showOperation.getText().toString();
             // Split it
-            String[] splittedText = text.split(String.valueOf("\\" + mOperation));
+            String[] splittedText = getTheSecondNumber();
             // Take the Second number
             secondNumber = Double.parseDouble(splittedText[1]);
 
@@ -273,6 +273,20 @@ public class MainActivity extends AppCompatActivity {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * get the second number
+     */
+    private String[] getTheSecondNumber(){
+        // Get the Text
+        String text = showOperation.getText().toString();
+
+        if (mOperation == 'x') {
+            return text.split(String.valueOf("" + mOperation));
+        } else {
+            return text.split(String.valueOf("\\" + mOperation));
         }
     }
 
