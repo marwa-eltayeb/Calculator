@@ -328,7 +328,7 @@
             android:layout_marginRight="2dp"
             android:layout_weight="1"
             android:background="@drawable/button3"
-            android:onClick="dot"
+            android:onClick="point"
             android:text="@string/point"
             android:textColor="@color/black"
             android:textSize="@dimen/testSize" />
