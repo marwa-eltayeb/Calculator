@@ -83,6 +83,7 @@
             android:background="@drawable/button2"
             android:onClick="multiply"
             android:text="@string/x"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
 
@@ -97,6 +98,7 @@
             android:background="@drawable/button2"
             android:contentDescription="@string/back_space"
             android:onClick="backSpace"
+            android:scaleType="center"
             android:src="@drawable/ic_arrow_back_black_24dp"
             android:text="@string/bs"
             android:textAllCaps="false"
