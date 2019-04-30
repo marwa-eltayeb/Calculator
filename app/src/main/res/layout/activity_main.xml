@@ -26,14 +26,14 @@
             android:maxLength="15"
             android:maxLines="1"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSizeForScreen" />
+            android:textSize="@dimen/textSizeForScreen" />
 
         <TextView
             android:id="@+id/displayResult"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSizeForScreen" />
+            android:textSize="@dimen/textSizeForScreen" />
     </LinearLayout>
 
 
