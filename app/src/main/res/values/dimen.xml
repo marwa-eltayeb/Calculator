@@ -8,5 +8,5 @@
     <dimen name="lowerScreenHeight">50dp</dimen>
 
     <dimen name="margin">10dp</dimen>
-    
+
 </resources>
