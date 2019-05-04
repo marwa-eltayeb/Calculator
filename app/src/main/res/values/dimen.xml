@@ -3,11 +3,11 @@
     <dimen name="testSizeForScreen">20sp</dimen>
     <dimen name="testSize">20sp</dimen>
 
-
     <dimen name="upperScreenHeight">75dp</dimen>
     <dimen name="lowerScreenHeight">50dp</dimen>
 
     <dimen name="margin">10dp</dimen>
+    <dimen name="margin2dp">2dp</dimen>
 
     <dimen name="padding">5dp</dimen>
 </resources>
