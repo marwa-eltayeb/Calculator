@@ -9,4 +9,5 @@
 
     <dimen name="margin">10dp</dimen>
 
+    <dimen name="padding">5dp</dimen>
 </resources>
