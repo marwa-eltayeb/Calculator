@@ -43,7 +43,7 @@
         android:layout_height="0dp"
         android:layout_weight="1.5"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:padding="@dimen/padding">
 
         <Button
             android:id="@+id/btnClear"
