@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -116,22 +117,28 @@ public class MainActivity extends AppCompatActivity {
         displayResult.setText("");
     }
 
-    public void add(View view) {
+
+    @OnClick(R.id.btnAdd)
+    void add() {
         setOperation('+');
     }
 
-    public void subtract(View view) {
+    @OnClick(R.id.btnSub)
+    public void subtract() {
         setOperation('-');
     }
 
+    @OnClick(R.id.btnMul)
     public void multiply(View view) {
         setOperation('x');
     }
 
+    @OnClick(R.id.btnDiv)
     public void divide(View view) {
         setOperation('÷');
     }
 
+    @OnClick(R.id.btnPerc)
     public void percent(View view) {
         setOperation('%');
     }
@@ -279,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * get the second number
      */
-    private String[] getTheSecondNumber(){
+    private String[] getTheSecondNumber() {
         // Get the Text
         String text = showOperation.getText().toString();
 
