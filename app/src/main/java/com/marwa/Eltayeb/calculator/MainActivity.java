@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= 24) {
             return (Html.fromHtml(number, 1)); // for 24 api and more
         } else {
-            return Html.fromHtml(number, 2);// or for older api
+            return Html.fromHtml(number);// or for older api
         }
     }
 
