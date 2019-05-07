@@ -129,17 +129,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btnMul)
-    public void multiply(View view) {
+    public void multiply() {
         setOperation('x');
     }
 
     @OnClick(R.id.btnDiv)
-    public void divide(View view) {
+    public void divide() {
         setOperation('÷');
     }
 
     @OnClick(R.id.btnPerc)
-    public void percent(View view) {
+    public void percent() {
         setOperation('%');
     }
 
