@@ -68,7 +68,6 @@
             android:layout_marginRight="@dimen/margin2dp"
             android:layout_weight="1"
             android:background="@drawable/button2"
-            android:onClick="divide"
             android:text="@string/divide"
             android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
@@ -82,7 +81,6 @@
             android:layout_marginRight="@dimen/margin2dp"
             android:layout_weight="1"
             android:background="@drawable/button2"
-            android:onClick="multiply"
             android:text="@string/x"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -165,7 +163,6 @@
             android:layout_marginRight="@dimen/margin2dp"
             android:layout_weight="1"
             android:background="@drawable/button2"
-            android:onClick="subtract"
             android:text="@string/sub"
             android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
@@ -229,7 +226,6 @@
             android:layout_marginRight="@dimen/margin2dp"
             android:layout_weight="1"
             android:background="@drawable/button2"
-            android:onClick="add"
             android:text="@string/plus"
             android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
@@ -293,7 +289,6 @@
             android:layout_marginRight="@dimen/margin2dp"
             android:layout_weight="1"
             android:background="@drawable/button2"
-            android:onClick="percent"
             android:text="@string/remaining"
             android:textColor="@color/white"
             android:textSize="@dimen/testSize" />
