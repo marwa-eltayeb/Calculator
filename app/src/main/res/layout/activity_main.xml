@@ -56,7 +56,7 @@
             android:background="@drawable/button1"
             android:text="@string/c"
             android:textColor="@color/white"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btnDiv"
@@ -69,7 +69,7 @@
             android:background="@drawable/button2"
             android:text="@string/divide"
             android:textColor="@color/white"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btnMul"
@@ -83,7 +83,7 @@
             android:text="@string/x"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <ImageButton
             android:id="@+id/btnBS"
@@ -100,7 +100,7 @@
             android:text="@string/bs"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -121,7 +121,7 @@
             android:background="@drawable/button3"
             android:text="@string/_7"
             android:textColor="#000"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btn8"
@@ -134,7 +134,7 @@
             android:background="@drawable/button3"
             android:text="@string/_8"
             android:textColor="#000"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btn9"
@@ -147,7 +147,7 @@
             android:background="@drawable/button3"
             android:text="@string/_9"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btnSub"
@@ -160,7 +160,7 @@
             android:background="@drawable/button2"
             android:text="@string/sub"
             android:textColor="@color/white"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -181,7 +181,7 @@
             android:background="@drawable/button3"
             android:text="@string/_4"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btn5"
@@ -194,7 +194,7 @@
             android:background="@drawable/button3"
             android:text="@string/_5"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btn6"
@@ -207,7 +207,7 @@
             android:background="@drawable/button3"
             android:text="@string/_6"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btnAdd"
@@ -220,7 +220,7 @@
             android:background="@drawable/button2"
             android:text="@string/plus"
             android:textColor="@color/white"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -241,7 +241,7 @@
             android:background="@drawable/button3"
             android:text="@string/_1"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btn2"
@@ -254,7 +254,7 @@
             android:background="@drawable/button3"
             android:text="@string/_2"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btn3"
@@ -267,7 +267,7 @@
             android:background="@drawable/button3"
             android:text="@string/_3"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btnPerc"
@@ -280,7 +280,7 @@
             android:background="@drawable/button2"
             android:text="@string/remaining"
             android:textColor="@color/white"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
     </LinearLayout>
 
     <LinearLayout
@@ -301,7 +301,7 @@
             android:background="@drawable/button3"
             android:text="@string/_0"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btnPoint"
@@ -314,7 +314,7 @@
             android:background="@drawable/button3"
             android:text="@string/point"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btnNegative"
@@ -327,7 +327,7 @@
             android:background="@drawable/button3"
             android:text="@string/pos_neg"
             android:textColor="@color/black"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
 
         <Button
             android:id="@+id/btnEquals"
@@ -340,7 +340,7 @@
             android:background="@drawable/button1"
             android:text="@string/equals"
             android:textColor="@color/white"
-            android:textSize="@dimen/testSize" />
+            android:textSize="@dimen/textSize" />
     </LinearLayout>
 </LinearLayout>
 
