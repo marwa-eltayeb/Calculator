@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         setOperation('÷');
     }
 
-    @OnClick(R.id.btnPerc)
+    @OnClick(R.id.btnPercent)
     public void percent(View view) {
         setOperation('%');
     }
