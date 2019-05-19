@@ -11,6 +11,7 @@
     <style name="button1">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:layout_marginLeft">@dimen/margin2dp</item>
         <item name="android:layout_marginRight">@dimen/margin2dp</item>
         <item name="android:background">@drawable/button1</item>
@@ -21,6 +22,7 @@
     <style name="button2">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:layout_marginLeft">@dimen/margin2dp</item>
         <item name="android:layout_marginRight">@dimen/margin2dp</item>
         <item name="android:background">@drawable/button2</item>
@@ -32,6 +34,7 @@
     <style name="button3">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:layout_marginLeft">@dimen/margin2dp</item>
         <item name="android:layout_marginRight">@dimen/margin2dp</item>
         <item name="android:background">@drawable/button3</item>
@@ -39,5 +42,4 @@
         <item name="android:textSize">@dimen/textSize</item>
         <item name="android:textAllCaps">false</item>
     </style>
-
 </resources>
