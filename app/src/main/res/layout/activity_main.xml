@@ -50,25 +50,21 @@
         <Button
             android:id="@+id/btnClear"
             style="@style/button1"
-            android:layout_weight="1"
-            android:text="@string/c" />
+            android:text="@string/reset" />
 
         <Button
             android:id="@+id/btnDiv"
             style="@style/button2"
-            android:layout_weight="1"
             android:text="@string/divide" />
 
         <Button
             android:id="@+id/btnMul"
             style="@style/button2"
-            android:layout_weight="1"
-            android:text="@string/x" />
+            android:text="@string/multiply" />
 
         <ImageButton
             android:id="@+id/btnBS"
             style="@style/button2"
-            android:layout_weight="1"
             android:contentDescription="@string/back_space"
             android:src="@drawable/ic_arrow_back_black_24dp"
             android:text="@string/bs" />
@@ -84,17 +80,17 @@
         <Button
             android:id="@+id/btn7"
             style="@style/button3"
-            android:text="@string/_7" />
+            android:text="@string/seven" />
 
         <Button
             android:id="@+id/btn8"
             style="@style/button3"
-            android:text="@string/_8" />
+            android:text="@string/eight" />
 
         <Button
             android:id="@+id/btn9"
             style="@style/button3"
-            android:text="@string/_9" />
+            android:text="@string/nine" />
 
         <Button
             android:id="@+id/btnSub"
@@ -112,17 +108,17 @@
         <Button
             android:id="@+id/btn4"
             style="@style/button3"
-            android:text="@string/_4" />
+            android:text="@string/four" />
 
         <Button
             android:id="@+id/btn5"
             style="@style/button3"
-            android:text="@string/_5" />
+            android:text="@string/five" />
 
         <Button
             android:id="@+id/btn6"
             style="@style/button3"
-            android:text="@string/_6" />
+            android:text="@string/six" />
 
         <Button
             android:id="@+id/btnAdd"
@@ -140,17 +136,17 @@
         <Button
             android:id="@+id/btn1"
             style="@style/button3"
-            android:text="@string/_1" />
+            android:text="@string/one" />
 
         <Button
             android:id="@+id/btn2"
             style="@style/button3"
-            android:text="@string/_2" />
+            android:text="@string/two" />
 
         <Button
             android:id="@+id/btn3"
             style="@style/button3"
-            android:text="@string/_3" />
+            android:text="@string/three" />
 
         <Button
             android:id="@+id/btnPercent"
@@ -168,7 +164,7 @@
         <Button
             android:id="@+id/btnZero"
             style="@style/button3"
-            android:text="@string/_0" />
+            android:text="@string/zero" />
 
         <Button
             android:id="@+id/btnPoint"
