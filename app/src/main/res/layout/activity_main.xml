@@ -82,25 +82,21 @@
         <Button
             android:id="@+id/btn7"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_7" />
 
         <Button
             android:id="@+id/btn8"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_8" />
 
         <Button
             android:id="@+id/btn9"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_9" />
 
         <Button
             android:id="@+id/btnSub"
             style="@style/button2"
-            android:layout_weight="1"
             android:text="@string/sub" />
     </LinearLayout>
 
@@ -114,25 +110,21 @@
         <Button
             android:id="@+id/btn4"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_4" />
 
         <Button
             android:id="@+id/btn5"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_5" />
 
         <Button
             android:id="@+id/btn6"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_6" />
 
         <Button
             android:id="@+id/btnAdd"
             style="@style/button2"
-            android:layout_weight="1"
             android:text="@string/plus" />
     </LinearLayout>
 
@@ -146,25 +138,21 @@
         <Button
             android:id="@+id/btn1"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_1" />
 
         <Button
             android:id="@+id/btn2"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_2" />
 
         <Button
             android:id="@+id/btn3"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_3" />
 
         <Button
-            android:id="@+id/btnPerc"
+            android:id="@+id/btnPercent"
             style="@style/button2"
-            android:layout_weight="1"
             android:text="@string/remaining" />
     </LinearLayout>
 
@@ -178,27 +166,21 @@
         <Button
             android:id="@+id/btnZero"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/_0" />
 
         <Button
             android:id="@+id/btnPoint"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/point" />
 
         <Button
             android:id="@+id/btnNegative"
             style="@style/button3"
-            android:layout_weight="1"
             android:text="@string/pos_neg" />
 
         <Button
             android:id="@+id/btnEquals"
             style="@style/button1"
-            android:layout_weight="1"
             android:text="@string/equals" />
     </LinearLayout>
 </LinearLayout>
-
-
