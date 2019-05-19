@@ -112,40 +112,41 @@ public class MainActivity extends AppCompatActivity {
     /*
     * Clear the result
     */
+    @OnClick(R.id.btnClear)
     public void clear(View view) {
         showOperation.setText("");
         displayResult.setText("");
     }
 
-
     @OnClick(R.id.btnAdd)
-    void add() {
+    public void add(View view) {
         setOperation('+');
     }
 
     @OnClick(R.id.btnSub)
-    public void subtract() {
+    public void subtract(View view) {
         setOperation('-');
     }
 
     @OnClick(R.id.btnMul)
-    public void multiply() {
+    public void multiply(View view) {
         setOperation('x');
     }
 
     @OnClick(R.id.btnDiv)
-    public void divide() {
+    public void divide(View view) {
         setOperation('÷');
     }
 
     @OnClick(R.id.btnPerc)
-    public void percent() {
+    public void percent(View view) {
         setOperation('%');
     }
 
     /**
      * Undo the last number.
      */
+    @OnClick(R.id.btnBS)
     public void backSpace(View view) {
         String txt = showOperation.getText().toString();
         if (txt.length() > 0) {
@@ -154,56 +155,67 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.btnZero)
     public void zero(View view) {
         deletePreviousResult();
         setAll("0");
     }
 
+    @OnClick(R.id.btn1)
     public void one(View view) {
         deletePreviousResult();
         setAll("1");
     }
 
+    @OnClick(R.id.btn2)
     public void two(View view) {
         deletePreviousResult();
         setAll("2");
     }
 
+    @OnClick(R.id.btn3)
     public void three(View view) {
         deletePreviousResult();
         setAll("3");
     }
 
+    @OnClick(R.id.btn4)
     public void four(View view) {
         deletePreviousResult();
         setAll("4");
     }
 
+    @OnClick(R.id.btn5)
     public void five(View view) {
         deletePreviousResult();
         setAll("5");
     }
 
+    @OnClick(R.id.btn6)
     public void six(View view) {
         deletePreviousResult();
         setAll("6");
     }
 
+    @OnClick(R.id.btn7)
     public void seven(View view) {
         deletePreviousResult();
         setAll("7");
     }
 
+    @OnClick(R.id.btn8)
     public void eight(View view) {
         deletePreviousResult();
         setAll("8");
     }
 
+    @OnClick(R.id.btn9)
     public void nine(View view) {
         deletePreviousResult();
         setAll("9");
     }
 
+    @OnClick(R.id.btnPoint)
     public void point(View view) {
         deletePreviousResult();
         setAll(".");
@@ -212,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Set a negative number.
      */
+    @OnClick(R.id.btnNegative)
     public void setNegativeNumber(View view) {
         if (showOperation.getText().toString().isEmpty()) {
             showOperation.setText("");
@@ -226,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.btnEquals)
     public void equals(View view) {
         try {
             // Split it
