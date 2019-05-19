@@ -5,10 +5,13 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="blue">#5d72e9</color>
+    <color name="bluePressed">#4d62d7</color>
     <color name="black">#000</color>
     <color name="white">#fff</color>
     <color name="gray">#dcdcdc</color>
 
     <color name="lightGray">#c7c8ca</color>
+    <color name="lightGrayPressed">#a6a6a6</color>
     <color name="darkGray">#5b5c60</color>
+    <color name="darkGrayPressed">#6e6e6e</color>
 </resources>
