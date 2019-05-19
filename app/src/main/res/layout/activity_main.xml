@@ -47,60 +47,29 @@
 
         <Button
             android:id="@+id/btnClear"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button1"
             android:layout_weight="1"
-            android:background="@drawable/button1"
-            android:text="@string/c"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/c" />
 
         <Button
             android:id="@+id/btnDiv"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button2"
             android:layout_weight="1"
-            android:background="@drawable/button2"
-            android:text="@string/divide"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/divide" />
 
         <Button
             android:id="@+id/btnMul"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button2"
             android:layout_weight="1"
-            android:background="@drawable/button2"
-            android:text="@string/x"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/x" />
 
         <ImageButton
             android:id="@+id/btnBS"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button2"
             android:layout_weight="1"
-            android:background="@drawable/button2"
             android:contentDescription="@string/back_space"
-            android:scaleType="center"
             android:src="@drawable/ic_arrow_back_black_24dp"
-            android:text="@string/bs"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/bs" />
     </LinearLayout>
 
     <LinearLayout
@@ -112,55 +81,27 @@
 
         <Button
             android:id="@+id/btn7"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_7"
-            android:textColor="#000"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_7" />
 
         <Button
             android:id="@+id/btn8"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_8"
-            android:textColor="#000"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_8" />
 
         <Button
             android:id="@+id/btn9"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_9"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_9" />
 
         <Button
             android:id="@+id/btnSub"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button2"
             android:layout_weight="1"
-            android:background="@drawable/button2"
-            android:text="@string/sub"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/sub" />
     </LinearLayout>
 
     <LinearLayout
@@ -172,55 +113,27 @@
 
         <Button
             android:id="@+id/btn4"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_4"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_4" />
 
         <Button
             android:id="@+id/btn5"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_5"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_5" />
 
         <Button
             android:id="@+id/btn6"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_6"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_6" />
 
         <Button
             android:id="@+id/btnAdd"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button2"
             android:layout_weight="1"
-            android:background="@drawable/button2"
-            android:text="@string/plus"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/plus" />
     </LinearLayout>
 
     <LinearLayout
@@ -232,55 +145,27 @@
 
         <Button
             android:id="@+id/btn1"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_1"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_1" />
 
         <Button
             android:id="@+id/btn2"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_2"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_2" />
 
         <Button
             android:id="@+id/btn3"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_3"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_3" />
 
         <Button
             android:id="@+id/btnPerc"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button2"
             android:layout_weight="1"
-            android:background="@drawable/button2"
-            android:text="@string/remaining"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/remaining" />
     </LinearLayout>
 
     <LinearLayout
@@ -292,55 +177,27 @@
 
         <Button
             android:id="@+id/btnZero"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/_0"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/_0" />
 
         <Button
             android:id="@+id/btnPoint"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/point"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/point" />
 
         <Button
             android:id="@+id/btnNegative"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button3"
             android:layout_weight="1"
-            android:background="@drawable/button3"
-            android:text="@string/pos_neg"
-            android:textColor="@color/black"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/pos_neg" />
 
         <Button
             android:id="@+id/btnEquals"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/margin2dp"
-            android:layout_marginRight="@dimen/margin2dp"
+            style="@style/button1"
             android:layout_weight="1"
-            android:background="@drawable/button1"
-            android:text="@string/equals"
-            android:textColor="@color/white"
-            android:textSize="@dimen/textSize" />
+            android:text="@string/equals" />
     </LinearLayout>
 </LinearLayout>
 
