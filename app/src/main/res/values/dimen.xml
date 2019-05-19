@@ -3,7 +3,7 @@
     <dimen name="textSizeForScreen">20sp</dimen>
     <dimen name="textSize">20sp</dimen>
 
-    <dimen name="upperScreenHeight">75dp</dimen>
+    <dimen name="upperScreenHeight">50dp</dimen>
     <dimen name="lowerScreenHeight">50dp</dimen>
 
     <dimen name="margin">10dp</dimen>
