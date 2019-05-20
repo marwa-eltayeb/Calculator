@@ -23,7 +23,7 @@
             android:background="@null"
             android:gravity="center_vertical"
             android:inputType="none"
-            android:maxLength="15"
+            android:maxLength="14"
             android:maxLines="1"
             android:textColor="@color/black"
             android:textSize="@dimen/textSizeForScreen" />
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/lowerScreenHeight"
             android:gravity="center_vertical"
-            android:maxLength="15"
+            android:maxLength="14"
             android:maxLines="1"
             android:textColor="@color/black"
             android:textSize="@dimen/textSizeForScreen" />
