@@ -3,6 +3,8 @@
     <dimen name="textSizeForScreen">35sp</dimen>
     <dimen name="textSize">20sp</dimen>
 
+    <item name="weight" type="dimen" format="float">2.5</item>
+
     <dimen name="upperScreenHeight">50dp</dimen>
     <dimen name="lowerScreenHeight">50dp</dimen>
 </resources>
