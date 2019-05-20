@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="textSizeForScreen">20sp</dimen>
+    <dimen name="textSizeForScreen">35sp</dimen>
     <dimen name="textSize">20sp</dimen>
+
+    <dimen name="upperScreenHeight">50dp</dimen>
+    <dimen name="lowerScreenHeight">50dp</dimen>
 </resources>
