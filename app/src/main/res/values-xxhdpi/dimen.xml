@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="textSizeForScreen">45sp</dimen>
+    <dimen name="textSizeForScreen">40sp</dimen>
     <dimen name="textSize">30sp</dimen>
 
-    <item name="weight" type="dimen" format="float">2.6</item>
+    <item name="weight" type="dimen" format="integer">2</item>
 
     <dimen name="upperScreenHeight">65dp</dimen>
     <dimen name="lowerScreenHeight">65dp</dimen>
