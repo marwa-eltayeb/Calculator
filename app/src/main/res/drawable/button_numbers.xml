@@ -2,7 +2,7 @@
 <layer-list
 xmlns:android="http://schemas.android.com/apk/res/android">
 <item>
-    <shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android" >
+    <shape android:shape="rectangle">
         <stroke
             android:width="2dp"
             android:color="@color/black" />
@@ -13,7 +13,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
 </item>
 
 <item>
-    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <selector>
         <item android:state_pressed="true">
             <shape android:shape="rectangle">
                 <stroke android:width="2dp" android:color="@color/black" />
