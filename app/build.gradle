@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "28.0.3"
     defaultConfig {
-        applicationId "com.marwa.Eltayeb.calculator"
+        applicationId "com.marwaeltayeb.calculator"
         minSdkVersion 17
         targetSdkVersion 29
         versionCode 1

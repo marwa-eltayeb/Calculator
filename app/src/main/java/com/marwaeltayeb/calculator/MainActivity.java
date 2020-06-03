@@ -1,4 +1,4 @@
-package com.marwa.Eltayeb.calculator;
+package com.marwaeltayeb.calculator;
 
 import android.os.Build;
 import android.os.Bundle;
