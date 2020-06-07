@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/gray"
     android:orientation="vertical"
-    tools:context="com.marwa.Eltayeb.calculator.MainActivity">
+    tools:context="com.marwaeltayeb.calculator.MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayoutOne"
