@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
     EditText showOperation;
     @BindView(R.id.displayResult)
     TextView displayResult;
-    
+
     double firstNumber = 0;
     double secondNumber = 0;
     Double result;
     char mOperation;
+
+    @BindView(R.id.linearLayoutOne)
+    LinearLayout linearLayoutOne;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
