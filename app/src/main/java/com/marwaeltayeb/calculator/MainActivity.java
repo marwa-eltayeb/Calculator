@@ -1,10 +1,12 @@
 package com.marwaeltayeb.calculator;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -13,22 +15,31 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Arrays;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
+
+    private final String FIRST_NUMBER = "firstNumber";
+    private final String SECOND_NUMBER = "secondNumber";
+    private final String OPERATOR = "operator";
 
     @BindView(R.id.showOperation)
     EditText showOperation;
     @BindView(R.id.displayResult)
     TextView displayResult;
+    
     double firstNumber = 0;
     double secondNumber = 0;
     Double result;
     char mOperation;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         showOperation.setOnTouchListener(onTouchListener);
 
+        if (savedInstanceState != null) {
+            firstNumber = savedInstanceState.getDouble(FIRST_NUMBER);
+            secondNumber = savedInstanceState.getDouble(SECOND_NUMBER);
+            mOperation = savedInstanceState.getChar(OPERATOR);
+            Log.d(TAG, "firstNumber: " + firstNumber + " " + mOperation + "  secondNumber: " + secondNumber);
+        }
     }
 
     /**
@@ -67,13 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 // Show mathematical operation on screen
                 text = showOperation.getText().toString() + operation;
                 showOperation.setText(text);
-
-                /*
-                int blue = ContextCompat.getColor(this, R.color.blue);
-                coloredOperation = getColoredString(String.valueOf(operation), blue);
-                showOperation.setText(coloredOperation);
-                */
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -111,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    * Clear the result
-    */
+     * Clear the result
+     */
     @OnClick(R.id.btnClear)
     public void clear(View view) {
         showOperation.setText("");
@@ -245,6 +255,11 @@ public class MainActivity extends AppCompatActivity {
         try {
             // Split it
             String[] splittedText = getTheSecondNumber();
+
+            Log.d(TAG, "array: " + Arrays.toString(splittedText));
+            Log.d(TAG, "firstNumber: " + firstNumber + " secondNumber: " + secondNumber);
+            Log.d(TAG, "operation: " + mOperation);
+
             // Take the Second number
             secondNumber = Double.parseDouble(splittedText[1]);
 
@@ -293,6 +308,9 @@ public class MainActivity extends AppCompatActivity {
                 // Set the whole number
                 displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
             }
+
+            Log.d(TAG, "equals: " + coloredWholeNumber);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -334,6 +352,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private View.OnTouchListener onTouchListener = new View.OnTouchListener() {
+        @SuppressLint("ClickableViewAccessibility")
         @Override
         public boolean onTouch(View view, MotionEvent event) {
             int action = event.getAction();
@@ -346,4 +365,12 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putDouble(FIRST_NUMBER, firstNumber);
+        outState.putDouble(SECOND_NUMBER, secondNumber);
+        outState.putChar(OPERATOR, mOperation);
+        // call superclass to save any view hierarchy
+        super.onSaveInstanceState(outState);
+    }
 }
