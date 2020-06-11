@@ -260,60 +260,63 @@ public class MainActivity extends AppCompatActivity {
             // Split it
             String[] splittedText = getTheSecondNumber();
 
-            Log.d(TAG, "array: " + Arrays.toString(splittedText));
-            Log.d(TAG, "firstNumber: " + firstNumber + " secondNumber: " + secondNumber);
-            Log.d(TAG, "operation: " + mOperation);
+            if (splittedText.length > 1) {
 
-            // Take the Second number
-            secondNumber = Double.parseDouble(splittedText[1]);
+                Log.d(TAG, "array: " + Arrays.toString(splittedText));
+                Log.d(TAG, "firstNumber: " + firstNumber + " secondNumber: " + secondNumber);
+                Log.d(TAG, "operation: " + mOperation);
 
-            switch (mOperation) {
-                case '+':
-                    result = firstNumber + secondNumber;
-                    break;
-                case '-':
-                    result = firstNumber - secondNumber;
-                    break;
-                case 'x':
-                    result = firstNumber * secondNumber;
-                    break;
-                case '÷':
-                    if (secondNumber == 0) //when denominator becomes zero
-                    {
-                        Toast.makeText(this, "DIVISION NOT POSSIBLE", Toast.LENGTH_SHORT).show();
-                        result = null;
-                        displayResult.setText(getResources().getString(R.string.error));
+                // Take the Second number
+                secondNumber = Double.parseDouble(splittedText[1]);
+
+                switch (mOperation) {
+                    case '+':
+                        result = firstNumber + secondNumber;
                         break;
-                    } else {
-                        result = firstNumber / secondNumber;
-                    }
-                    break;
-                case '%':
-                    result = firstNumber % secondNumber;
-                    break;
+                    case '-':
+                        result = firstNumber - secondNumber;
+                        break;
+                    case 'x':
+                        result = firstNumber * secondNumber;
+                        break;
+                    case '÷':
+                        if (secondNumber == 0) //when denominator becomes zero
+                        {
+                            Toast.makeText(this, "DIVISION NOT POSSIBLE", Toast.LENGTH_SHORT).show();
+                            result = null;
+                            displayResult.setText(getResources().getString(R.string.error));
+                            break;
+                        } else {
+                            result = firstNumber / secondNumber;
+                        }
+                        break;
+                    case '%':
+                        result = firstNumber % secondNumber;
+                        break;
+                }
+
+                // Get the whole number of the result
+                Integer wholeNumber = result.intValue();
+                // Check if result is whole number or not
+                double checkResult = result / wholeNumber;
+
+                String coloredDecimalNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + result + "</font>";
+                String coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + wholeNumber + "</font>";
+
+                if (result == 0.0) {
+                    coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + 0 + "</font>";
+                    displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
+                    // If result is not equal one
+                } else if (checkResult != 1) {
+                    // Set the decimal number
+                    displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
+                } else {
+                    // Set the whole number
+                    displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
+                }
+
+                Log.d(TAG, "equals: " + coloredWholeNumber);
             }
-
-            // Get the whole number of the result
-            Integer wholeNumber = result.intValue();
-            // Check if result is whole number or not
-            double checkResult = result / wholeNumber;
-
-            String coloredDecimalNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + result + "</font>";
-            String coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + wholeNumber + "</font>";
-
-            if (result == 0.0) {
-                coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + 0 + "</font>";
-                displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
-                // If result is not equal one
-            } else if (checkResult != 1) {
-                // Set the decimal number
-                displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
-            } else {
-                // Set the whole number
-                displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
-            }
-
-            Log.d(TAG, "equals: " + coloredWholeNumber);
 
         } catch (Exception e) {
             e.printStackTrace();
