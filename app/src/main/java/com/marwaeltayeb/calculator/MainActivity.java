@@ -3,20 +3,23 @@ package com.marwaeltayeb.calculator;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private final String FIRST_NUMBER = "firstNumber";
     private final String SECOND_NUMBER = "secondNumber";
     private final String OPERATOR = "operator";
+    private final String RESULT = "result";
+    private final String WHOLE_NUMBER = "wholeNumber";
 
     @BindView(R.id.showOperation)
     EditText showOperation;
@@ -40,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
     Double result;
     char mOperation;
 
-    @BindView(R.id.linearLayoutOne)
-    LinearLayout linearLayoutOne;
+    private Integer wholeNumber;
+    private double checkResult;
+
+    private TextToSpeech tts;
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -56,7 +63,14 @@ public class MainActivity extends AppCompatActivity {
             firstNumber = savedInstanceState.getDouble(FIRST_NUMBER);
             secondNumber = savedInstanceState.getDouble(SECOND_NUMBER);
             mOperation = savedInstanceState.getChar(OPERATOR);
-            Log.d(TAG, "firstNumber: " + firstNumber + " " + mOperation + "  secondNumber: " + secondNumber);
+            result = savedInstanceState.getDouble(RESULT);
+            wholeNumber = savedInstanceState.getInt(WHOLE_NUMBER);
+
+            displayColouredResult();
+
+            if (Double.isNaN(result) || result == 0.0) {
+                displayResult.setText("");
+            }
         }
     }
 
@@ -129,8 +143,11 @@ public class MainActivity extends AppCompatActivity {
      */
     @OnClick(R.id.btnClear)
     public void clear(View view) {
-        showOperation.setText("");
-        displayResult.setText("");
+        if (displayResult.getText().length() > 0 || showOperation.getText().length() > 0) {
+            showOperation.setText("");
+            displayResult.setText("");
+            result = Double.NaN;
+        }
     }
 
     @OnClick(R.id.btnAdd)
@@ -283,8 +300,8 @@ public class MainActivity extends AppCompatActivity {
                         if (secondNumber == 0) //when denominator becomes zero
                         {
                             Toast.makeText(this, "DIVISION NOT POSSIBLE", Toast.LENGTH_SHORT).show();
-                            result = null;
-                            displayResult.setText(getResources().getString(R.string.error));
+                            result = Double.POSITIVE_INFINITY;
+                            displayResult.setText(String.valueOf(result));
                             break;
                         } else {
                             result = firstNumber / secondNumber;
@@ -295,32 +312,37 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-                // Get the whole number of the result
-                Integer wholeNumber = result.intValue();
-                // Check if result is whole number or not
-                double checkResult = result / wholeNumber;
-
-                String coloredDecimalNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + result + "</font>";
-                String coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + wholeNumber + "</font>";
-
-                if (result == 0.0) {
-                    coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + 0 + "</font>";
-                    displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
-                    // If result is not equal one
-                } else if (checkResult != 1) {
-                    // Set the decimal number
-                    displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
-                } else {
-                    // Set the whole number
-                    displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
-                }
-
-                Log.d(TAG, "equals: " + coloredWholeNumber);
+                displayColouredResult();
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void displayColouredResult() {
+
+        // Get the whole number of the result
+        wholeNumber = result.intValue();
+        // Check if result is whole number or not
+        checkResult = result / wholeNumber;
+
+        String coloredDecimalNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + result + "</font>";
+        String coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + wholeNumber + "</font>";
+
+        if (result == 0.0) {
+            coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + 0 + "</font>";
+            displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
+            // If result is not equal one
+        } else if (checkResult != 1) {
+            // Set the decimal number
+            displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
+        } else {
+            // Set the whole number
+            displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
+        }
+
+        Log.d(TAG, "equals: " + coloredWholeNumber);
     }
 
     /**
@@ -377,7 +399,63 @@ public class MainActivity extends AppCompatActivity {
         outState.putDouble(FIRST_NUMBER, firstNumber);
         outState.putDouble(SECOND_NUMBER, secondNumber);
         outState.putChar(OPERATOR, mOperation);
+        if (result != null) {
+            outState.putDouble(RESULT, result);
+            outState.putInt(WHOLE_NUMBER, wholeNumber);
+        }
+
         // call superclass to save any view hierarchy
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_play_sound) {
+            if (displayResult.getText().length() > 0) {
+                if (result == 0.0) {
+                    playSound("0");
+                } else if (checkResult != 1) {
+                    playSound(String.valueOf(result));
+                } else {
+                    playSound(String.valueOf(wholeNumber));
+                }
+            }
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    private void playSound(String text) {
+        // Initialize the TextToSpeech Variable.
+        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                // TTS is successfully initialized
+                if (status == TextToSpeech.SUCCESS) {
+                    // Set speech language
+                    int result = tts.setLanguage(Locale.US);
+                    // If your device does not support language you set above
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Toast.makeText(getApplicationContext(), "Language not supported", Toast.LENGTH_SHORT).show();
+                        // Otherwise the language is supported.
+                    } else {
+                        // If there is no text, speak "no text".
+                        if (text == null || "".equals(text)) {
+                            tts.speak("no Text", TextToSpeech.QUEUE_FLUSH, null);
+                        } else {
+                            // Otherwise there ia a text, speak it.
+                            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+                        }
+                    }
+                }
+            }
+        });
     }
 }
