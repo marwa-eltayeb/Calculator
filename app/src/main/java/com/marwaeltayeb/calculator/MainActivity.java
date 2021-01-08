@@ -3,7 +3,6 @@ package com.marwaeltayeb.calculator;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -19,11 +18,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
-import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.marwaeltayeb.calculator.SoundUtils.playSound;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Integer wholeNumber;
     private double checkResult;
-
-    private TextToSpeech tts;
-
+    
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -353,8 +351,10 @@ public class MainActivity extends AppCompatActivity {
         String text = showOperation.getText().toString();
 
         if (mOperation == 'x') {
+            // Split by operator x
             return text.split(String.valueOf("" + mOperation));
         } else {
+            // Split by operator +, -, ÷
             return text.split(String.valueOf("\\" + mOperation));
         }
     }
@@ -419,43 +419,15 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_play_sound) {
             if (displayResult.getText().length() > 0) {
                 if (result == 0.0) {
-                    playSound("0");
+                    playSound("0",this);
                 } else if (checkResult != 1) {
-                    playSound(String.valueOf(result));
+                    playSound(String.valueOf(result),this);
                 } else {
-                    playSound(String.valueOf(wholeNumber));
+                    playSound(String.valueOf(wholeNumber),this);
                 }
             }
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-
-    private void playSound(String text) {
-        // Initialize the TextToSpeech Variable.
-        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                // TTS is successfully initialized
-                if (status == TextToSpeech.SUCCESS) {
-                    // Set speech language
-                    int result = tts.setLanguage(Locale.US);
-                    // If your device does not support language you set above
-                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        Toast.makeText(getApplicationContext(), "Language not supported", Toast.LENGTH_SHORT).show();
-                        // Otherwise the language is supported.
-                    } else {
-                        // If there is no text, speak "no text".
-                        if (text == null || "".equals(text)) {
-                            tts.speak("no Text", TextToSpeech.QUEUE_FLUSH, null);
-                        } else {
-                            // Otherwise there ia a text, speak it.
-                            tts.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-                        }
-                    }
-                }
-            }
-        });
     }
 }
