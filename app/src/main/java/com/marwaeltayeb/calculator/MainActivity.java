@@ -349,6 +349,12 @@ public class MainActivity extends AppCompatActivity {
     private String[] getTheSecondNumber() {
         // Get the Text
         String text = showOperation.getText().toString();
+        if(text.startsWith("-")){
+            text = showOperation.getText().toString().substring(1);
+        }else {
+            text = showOperation.getText().toString();
+        }
+        Log.d(TAG, text);
 
         if (mOperation == 'x') {
             // Split by operator x
