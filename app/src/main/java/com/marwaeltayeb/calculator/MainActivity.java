@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         setContentView(R.layout.activity_main);
 
         historyList = HistoryStorage.loadData(this);
-        Toast.makeText(this, HistoryStorage.loadData(this).size() + "", Toast.LENGTH_SHORT).show();
 
         ButterKnife.bind(this);
         showOperation.setOnTouchListener(onTouchListener);
