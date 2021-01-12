@@ -1,10 +1,21 @@
 # Calculator
-It is a calculator for adding, subtracting, multiplying ,and dividing numbers.
+
+- It is a Calculator app that does simple calculations like addition, subtraction, multiplications, division, and remainder.
+
+- Users can write positive numbers, negative numbers, whole numbers, and real numbers.
+
+- The operation appears on the screen to enable users to see what they write.
+
+- If users write something wrong, they can erase it and retype.
+
+- Users can hear the result of the operation in words.
+
+- The calculator saves the calculations' history, and users can remove it.
 
 ## Screenshots
-| <img src="https://i.imgur.com/kKhCdZ5.png" width="250">  | <img src="https://i.imgur.com/yJUIXBJ.png" width="250">  | 
+| <img src="https://i.imgur.com/fIuXTy4.png" width="250">  | <img src="https://i.imgur.com/JkLJAAo.png" width="250">  | 
 | ------------- | ------------- |
-| <img src="https://i.imgur.com/wemtXfb.png" width="250">  | <img src="https://i.imgur.com/Vgq3c68.png" width="250">  | 
+| <img src="https://i.imgur.com/yzI2FRu.png" width="250">  | <img src="https://i.imgur.com/nP1sF42.png" width="250">  | 
 
 
 Project Preview: [Youtube](https://youtu.be/x5VAI6G2wzQ).
