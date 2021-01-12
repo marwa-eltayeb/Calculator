@@ -2,6 +2,7 @@ package com.marwaeltayeb.calculator;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -28,9 +29,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.marwaeltayeb.calculator.HistoryStorage.PREF_KEY;
 import static com.marwaeltayeb.calculator.SoundUtils.playSound;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
 
     private static final String TAG = "MainActivity";
 
@@ -52,12 +54,19 @@ public class MainActivity extends AppCompatActivity {
 
     private Integer wholeNumber;
     private double checkResult;
-    
+
+    private ArrayList<History> historyList;
+    private ListView listView;
+    private HistoryAdapter adapter;
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        historyList = HistoryStorage.loadData(this);
+        Toast.makeText(this, HistoryStorage.loadData(this).size() + "", Toast.LENGTH_SHORT).show();
 
         ButterKnife.bind(this);
         showOperation.setOnTouchListener(onTouchListener);
@@ -75,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                 displayResult.setText("");
             }
         }
+
+        // Register the listener
+        HistoryStorage.registerPref(this, this);
     }
 
     /**
@@ -316,6 +328,9 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 displayColouredResult();
+
+                //historyList.add(new History(String.valueOf((int)firstNumber), String.valueOf(mOperation) , String.valueOf((int)secondNumber) , String.valueOf(result.intValue())));
+                HistoryStorage.saveData(this,historyList);
             }
 
         } catch (Exception e) {
@@ -336,13 +351,16 @@ public class MainActivity extends AppCompatActivity {
         if (result == 0.0) {
             coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + 0 + "</font>";
             displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
+            historyList.add(new History(String.valueOf((int)firstNumber), String.valueOf(mOperation) , String.valueOf((int)secondNumber) , "0"));
             // If result is not equal one
         } else if (checkResult != 1) {
             // Set the decimal number
             displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
-        } else {
+            historyList.add(new History(String.valueOf(firstNumber), String.valueOf(mOperation) , String.valueOf(secondNumber) , String.valueOf(result)));
+        } else{
             // Set the whole number
             displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
+            historyList.add(new History(String.valueOf((int) firstNumber), String.valueOf(mOperation) , String.valueOf((int)secondNumber) , String.valueOf(wholeNumber)));
         }
 
         Log.d(TAG, "equals: " + coloredWholeNumber);
@@ -439,7 +457,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         }else if(item.getItemId() == R.id.action_history){
-            Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
             showCustomAlertDialog();
         }
         return super.onOptionsItemSelected(item);
@@ -454,7 +471,9 @@ public class MainActivity extends AppCompatActivity {
         clearHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                HistoryStorage.clearData(getApplicationContext());
+                adapter.clear();
+                Toast.makeText(MainActivity.this, "Cleared", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -465,20 +484,28 @@ public class MainActivity extends AppCompatActivity {
                 dialog.cancel();
             }
         });
-        
-        ArrayList<History> historyList = new ArrayList<>();
-        historyList.add(new History("2", "+" , "2" , "4"));
-        historyList.add(new History("5", "-" , "2" , "3"));
-        historyList.add(new History("2", "x" , "3" , "6"));
-        historyList.add(new History("8", "+" , "2" , "10"));
-        historyList.add(new History("10", "+" , "10" , "20"));
-        historyList.add(new History("50", "÷" , "5" , "10"));
 
-        HistoryAdapter adapter = new HistoryAdapter(this, historyList);
-        final ListView listView = dialog.findViewById(R.id.lst_history);
-
+        adapter = new HistoryAdapter(this, HistoryStorage.loadData(this));
+        listView = dialog.findViewById(R.id.lst_history);
         listView.setAdapter(adapter);
 
         dialog.show();
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        if (key.equals(PREF_KEY)) {
+            adapter.clear();
+            historyList = HistoryStorage.loadData(this);
+            adapter.addAll(historyList);
+            listView.setAdapter(adapter);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Unregister the listener
+        HistoryStorage.unregisterPref(this, this);
     }
 }
