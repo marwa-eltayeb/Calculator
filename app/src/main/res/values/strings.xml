@@ -25,4 +25,7 @@
     <string name="error">Error</string>
     <string name="back_space">back Space</string>
     <string name="play_sound">Play Sound</string>
+    <string name="history">History</string>
+    <string name="close">Close</string>
+    <string name="clear_history">Clear History</string>
 </resources>

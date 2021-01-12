@@ -6,4 +6,10 @@
         android:title="@string/play_sound"
         android:icon="@drawable/ic_speaker"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_history"
+        android:title="@string/history"
+        android:icon="@drawable/ic_history"
+        app:showAsAction="ifRoom" />
 </menu>

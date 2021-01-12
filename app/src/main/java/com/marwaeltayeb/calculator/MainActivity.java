@@ -1,6 +1,7 @@
 package com.marwaeltayeb.calculator;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
@@ -11,12 +12,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import butterknife.BindView;
@@ -433,7 +438,47 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             return true;
+        }else if(item.getItemId() == R.id.action_history){
+            Toast.makeText(this, "History", Toast.LENGTH_SHORT).show();
+            showCustomAlertDialog();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showCustomAlertDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.custom_dialog);
+
+        final TextView clearHistory = dialog.findViewById(R.id.btn_clear_history);
+        clearHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        final ImageView imgClose = dialog.findViewById(R.id.img_close);
+        imgClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+            }
+        });
+        
+        ArrayList<History> historyList = new ArrayList<>();
+        historyList.add(new History("2", "+" , "2" , "4"));
+        historyList.add(new History("5", "-" , "2" , "3"));
+        historyList.add(new History("2", "x" , "3" , "6"));
+        historyList.add(new History("8", "+" , "2" , "10"));
+        historyList.add(new History("10", "+" , "10" , "20"));
+        historyList.add(new History("50", "÷" , "5" , "10"));
+
+        HistoryAdapter adapter = new HistoryAdapter(this, historyList);
+        final ListView listView = dialog.findViewById(R.id.lst_history);
+
+        listView.setAdapter(adapter);
+
+        dialog.show();
     }
 }
