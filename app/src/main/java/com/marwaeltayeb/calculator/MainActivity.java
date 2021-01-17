@@ -326,9 +326,42 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
                         break;
                 }
 
-                displayColouredResult();
 
-                //historyList.add(new History(String.valueOf((int)firstNumber), String.valueOf(mOperation) , String.valueOf((int)secondNumber) , String.valueOf(result.intValue())));
+                // Get the whole number of the result
+                wholeNumber = result.intValue();
+                // Check if result is whole number or not
+                checkResult = result / wholeNumber;
+
+                String coloredDecimalNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + result + "</font>";
+                String coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + wholeNumber + "</font>";
+
+                // If result equals 0
+                if (result == 0.0) {
+                    coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + 0 + "</font>";
+                    displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
+                    historyList.add(new History(String.valueOf((int) firstNumber), String.valueOf(mOperation), String.valueOf((int) secondNumber), "0"));
+                // If result equals infinity
+                }else if(result == Double.POSITIVE_INFINITY){
+                    coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "Infinity" + "</font>";
+                    displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
+                    historyList.add(new History(String.valueOf((int) firstNumber), String.valueOf(mOperation), String.valueOf((int) secondNumber), "Infinity"));
+                // If result does not equal one
+                }else if (checkResult != 1) {
+                    // Set result as a decimal number
+                    displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
+                    historyList.add(new History(String.valueOf(firstNumber), String.valueOf(mOperation) , String.valueOf(secondNumber) , String.valueOf(result)));
+                // If result does not equal one and numbers are decimals
+                } else if((checkResult == 1 &&(firstNumber % 1 != 0) || (checkResult == 1 &&(secondNumber % 1 != 0)))){
+                    // Set result as a whole number
+                    displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
+                    historyList.add(new History(String.valueOf(firstNumber), String.valueOf(mOperation) , String.valueOf(secondNumber) , String.valueOf(result.intValue())));
+                // If result equals one
+                } else{
+                    // Set result a whole number
+                    displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
+                    historyList.add(new History(String.valueOf((int) firstNumber), String.valueOf(mOperation) , String.valueOf((int)secondNumber) , String.valueOf(wholeNumber)));
+                }
+
                 HistoryStorage.saveData(this,historyList);
             }
 
@@ -350,16 +383,13 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         if (result == 0.0) {
             coloredWholeNumber = "<font color='#5d72e9'>" + getString(R.string.equals) + "" + 0 + "</font>";
             displayResult.setText(colorResult(String.valueOf(coloredWholeNumber)), TextView.BufferType.SPANNABLE);
-            historyList.add(new History(String.valueOf((int)firstNumber), String.valueOf(mOperation) , String.valueOf((int)secondNumber) , "0"));
             // If result is not equal one
         } else if (checkResult != 1) {
             // Set the decimal number
             displayResult.setText(colorResult(coloredDecimalNumber), TextView.BufferType.SPANNABLE);
-            historyList.add(new History(String.valueOf(firstNumber), String.valueOf(mOperation) , String.valueOf(secondNumber) , String.valueOf(result)));
         } else{
             // Set the whole number
             displayResult.setText(colorResult(coloredWholeNumber), TextView.BufferType.SPANNABLE);
-            historyList.add(new History(String.valueOf((int) firstNumber), String.valueOf(mOperation) , String.valueOf((int)secondNumber) , String.valueOf(wholeNumber)));
         }
 
         Log.d(TAG, "equals: " + coloredWholeNumber);
@@ -408,7 +438,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         }
     }
 
-    private View.OnTouchListener onTouchListener = new View.OnTouchListener() {
+    private final View.OnTouchListener onTouchListener = new View.OnTouchListener() {
         @SuppressLint("ClickableViewAccessibility")
         @Override
         public boolean onTouch(View view, MotionEvent event) {

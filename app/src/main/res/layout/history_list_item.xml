@@ -48,13 +48,15 @@
             android:layout_marginStart="10dp"
             android:textColor="@color/blue"
             android:textSize="30sp"
-            android:text="=" />
+            android:text="@string/equals" />
 
         <TextView
             android:id="@+id/txt_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/blue"
+            android:maxLength="12"
+            android:maxLines="1"
             android:textSize="30sp"
             tools:text="50" />
     </LinearLayout>
