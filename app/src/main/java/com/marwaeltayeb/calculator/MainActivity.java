@@ -1,5 +1,8 @@
 package com.marwaeltayeb.calculator;
 
+import static com.marwaeltayeb.calculator.HistoryStorage.PREF_KEY;
+import static com.marwaeltayeb.calculator.SoundUtils.playSound;
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.SharedPreferences;
@@ -24,13 +27,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import static com.marwaeltayeb.calculator.HistoryStorage.PREF_KEY;
-import static com.marwaeltayeb.calculator.SoundUtils.playSound;
 
 public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener{
 
@@ -514,7 +515,9 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             }
         });
 
-        adapter = new HistoryAdapter(this, HistoryStorage.loadData(this));
+        ArrayList<History> reversedList = HistoryStorage.loadData(this);
+        Collections.reverse(reversedList);
+        adapter = new HistoryAdapter(this, reversedList);
         listView = dialog.findViewById(R.id.lst_history);
         listView.setAdapter(adapter);
 
