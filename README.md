@@ -21,3 +21,8 @@
 Project Preview: [Youtube](https://youtu.be/x5VAI6G2wzQ).
 
 <a href="https://galaxy.store/calci"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1599637432000" alt="Available on Samsung Galaxy Store"  width="380" height="80"></a>
+
+## Download
+
+<a href="https://galaxy.store/calci"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1599637432000" alt="Available on Samsung Galaxy Store" width="20%" height="60"></a>
+<a href="https://www.amazon.com/Marwa-Eltayeb-Calculator/dp/B089PVWRV9"><img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png" alt="Amazon App Store" width="20%" height="60"></a>
