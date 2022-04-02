@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.marwaeltayeb.calculator.MainActivity">
+            android:name="com.marwaeltayeb.calculator.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
