@@ -1,6 +1,14 @@
 # Calculator
 
-- It is a Calculator app that does simple calculations like addition, subtraction, multiplications, division, and remainder.
+It is a Calculator app that does simple calculations like addition, subtraction, multiplications, division, and remainder.
+
+## Download
+
+<a href='https://play.google.com/store/apps/details?id=com.marwaeltayeb.calculator'><img alt='Get it on Google Play' src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png' width="20%" height="60"/></a>
+<a href="https://galaxy.store/calci"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1599637432000" alt="Available on Samsung Galaxy Store" width="20%" height="60"></a>
+<a href="https://www.amazon.com/Marwa-Eltayeb-Calculator/dp/B089PVWRV9"><img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png" alt="Amazon App Store" width="20%" height="60"></a>
+
+## Features
 
 - Users can write positive numbers, negative numbers, whole numbers, and real numbers.
 
@@ -20,9 +28,3 @@
 
 Project Preview: [Youtube](https://youtu.be/x5VAI6G2wzQ).
 
-<a href="https://galaxy.store/calci"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1599637432000" alt="Available on Samsung Galaxy Store"  width="380" height="80"></a>
-
-## Download
-
-<a href="https://galaxy.store/calci"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1599637432000" alt="Available on Samsung Galaxy Store" width="20%" height="60"></a>
-<a href="https://www.amazon.com/Marwa-Eltayeb-Calculator/dp/B089PVWRV9"><img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/devportal2/res/images/amazon-appstore-badge-english-black.png" alt="Amazon App Store" width="20%" height="60"></a>
